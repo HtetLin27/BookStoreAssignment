@@ -1,0 +1,56 @@
+﻿@page
+@model BookStoreAssignment.Pages.Books.IndexModel;
+
+
+
+@{
+    ViewData["Title"] = "Book";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Book) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                    <button class="btn btn-primary" style="color:#fff">
+                        <a style="color:#fff;text-decoration:none" asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
+                    </button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Book_Store</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Book_Store.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <img src="~/img/StoreLogo.png" width="50" height="50" /> <span class="ms-2">Book Store</span>
+                </a>
+                <div>
+                    <span>Hi, John Smith</span>
+                    <div class="dropdown d-inline">
+
+                        <img src="https://randomuser.me/api/portraits/men/62.jpg" id="dropdownMenuButton0"
+                             data-bs-toggle="dropdown"
+                             aria-expanded="false" alt="Profile" width="50" height="50" class="img-responsive" style="border-radius:25px" />
+
+                        <ul class="dropdown-menu mt-4 " style="min-width:100px !important;left:-50px !important; color:#FFF !important" aria-labelledby="dropdownMenuButton0">
+                            <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Inbox</a></li>
+                            <li><a class="dropdown-item" href="#">Setting</a></li>
+                            <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="d-flex">
+        <div style="background-color:#2c3e50;color:#ecf0f1;height: calc(100vh - 77px);width:150px">
+            <div>Navigation</div>
+            <div class="dropdown border-0">
+                <button type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        style="background-color:#3498db;color:#ecf0f1;width:100%;text-align:left">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g id="Iconly/Bold/Category" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Category" transform="translate(2.000000, 2.000000)" fill="#200E32" fill-rule="nonzero">
+                                <path d="M5.9199,11.4697 C7.3299,11.4697 8.4599,12.6107 8.4599,14.0307 L8.4599,14.0307 L8.4599,17.4397 C8.4599,18.8497 7.3299,19.9997 5.9199,19.9997 L5.9199,19.9997 L2.5399,19.9997 C1.1399,19.9997 -0.0001,18.8497 -0.0001,17.4397 L-0.0001,17.4397 L-0.0001,14.0307 C-0.0001,12.6107 1.1399,11.4697 2.5399,11.4697 L2.5399,11.4697 Z M17.46,11.4697 C18.86,11.4697 20,12.6107 20,14.0307 L20,14.0307 L20,17.4397 C20,18.8497 18.86,19.9997 17.46,19.9997 L17.46,19.9997 L14.08,19.9997 C12.67,19.9997 11.54,18.8497 11.54,17.4397 L11.54,17.4397 L11.54,14.0307 C11.54,12.6107 12.67,11.4697 14.08,11.4697 L14.08,11.4697 Z M5.9199,-9.32587341e-14 C7.3299,-9.32587341e-14 8.4599,1.15 8.4599,2.561 L8.4599,2.561 L8.4599,5.97 C8.4599,7.39 7.3299,8.53 5.9199,8.53 L5.9199,8.53 L2.5399,8.53 C1.1399,8.53 -0.0001,7.39 -0.0001,5.97 L-0.0001,5.97 L-0.0001,2.561 C-0.0001,1.15 1.1399,-9.32587341e-14 2.5399,-9.32587341e-14 L2.5399,-9.32587341e-14 Z M17.46,-9.32587341e-14 C18.86,-9.32587341e-14 20,1.15 20,2.561 L20,2.561 L20,5.97 C20,7.39 18.86,8.53 17.46,8.53 L17.46,8.53 L14.08,8.53 C12.67,8.53 11.54,7.39 11.54,5.97 L11.54,5.97 L11.54,2.561 C11.54,1.15 12.67,-9.32587341e-14 14.08,-9.32587341e-14 L14.08,-9.32587341e-14 Z" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="ms-2">Category</span>
+                </button>
+                <ul class="dropdown-menu" style="background-color:#bdc3c7; min-width:100% !important;color:#FFF !important" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" asp-page="/Books/Create">Add</a></li>
+                    <li><a class="dropdown-item" asp-page="/Books/Index">Browse</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="background-color:#ecf0f1;width:calc(100vw - 150px)">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
